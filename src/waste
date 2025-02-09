@@ -1,0 +1,287 @@
+/* .container remains the same, keeping the background fixed */
+.trackcart-container {
+  background-image: url('./bg9.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+  /* Positioning for .title and ensuring it stays in a single line */
+  .title {
+    position: absolute;
+    top: -20%;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden;    /* Hide overflow */
+    text-overflow: ellipsis; /* Display ellipsis if the text overflows */
+    width: 100%;         /* Ensures the title takes full width of container */
+    text-align: center;  /* Center the title */
+  }
+  
+  /* Positioning for .info remains the same */
+  .info {
+    position: absolute;
+    top: 30%;
+    right: 40%; /* Moves the text 10% away from the right edge */
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000;
+    padding: 20px; /* Proper padding syntax: includes px for both values */
+    text-align: center; /* Keeps text center-aligned within its container */
+  }
+  
+  /* .animation-container and .line remain unchanged */
+  .animation-container {
+    position: absolute;
+    top: 40%; /* Adjust to position below the info text */
+    height: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .line {
+    width: 80%;
+    height: 2px;
+    background-color: #ccc;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Move cart to bottom left and animate it */
+  .cart {
+    position: fixed; /* Fixed so it remains in the viewport */
+    bottom: 10px; /* Start at the bottom */
+    left: 0; /* Align to the left edge */
+    height: 1500px;
+    width: 1000px; /* You can adjust the width of the cart */
+    transition: transform 2s ease-in-out; /* Smooth horizontal movement */
+    transform: translateX(0); /* Start at the left */
+  }
+  
+  .cart.animate {
+    transform: translateX(80%); /* Move the cart 80% of the viewport width */
+  }
+  
+  /* Fixed position for .person */
+  .person {
+    position: fixed;
+    right: -30px;
+    bottom: -40px;
+    height: 180px;
+  }
+  /* Track Button Styles */
+  .track-btn {
+    --color: #000000;
+    --color2: rgb(144, 199, 152);
+    padding: 0.8em 1.75em;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 0.3px solid var(--color);
+    transition: 0.5s;
+    position: absolute;
+    bottom: 70px; /* Adjusted to keep the button further up */
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 17px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    color: var(--color);
+  }
+  
+  .track-btn::after, .track-btn::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: 0.5s ease-out;
+    background-color: var(--color);
+  }
+  
+  .track-btn::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+  }
+  
+  .track-btn:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+  }
+  
+  .track-btn:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+  }
+  
+  .track-btn:hover {
+    color: var(--color2);
+  }
+  
+  .track-btn:active {
+    filter: brightness(0.7);
+    transform: scale(0.98);
+  }
+  
+  /* Retry Button Styles */
+  .retry-btn {
+    --color: #000000;
+    --color2: rgb(255, 255, 255);
+    padding: 0.8em 1.75em;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 0.3px solid var(--color);
+    transition: 0.5s;
+    position: absolute;
+    bottom: 20px; /* Move the button further down */
+    left: 50%;
+    transform: translateX(-50%); /* Keep it horizontally centered */
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 17px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    color: var(--color);
+  }
+  
+  /* Responsive Media Queries */
+  
+  /* Large screens (desktop) */
+  @media (min-width: 1200px) {
+    .container {
+      padding: 40px;
+    }
+  
+    .title {
+      font-size: 50px;
+      top: 15%;
+    }
+  
+    .info {
+      font-size: 30px;
+    }
+  
+    .cart {
+      width: 180px;
+      height: 180px;
+    }
+  
+    .track-btn {
+      font-size: 20px;
+      padding: 1em 2em;
+      bottom: 200px;
+    }
+  
+    .retry-btn {
+      font-size: 20px;
+      padding: 1em 2em;
+    }
+  }
+  
+  /* Medium screens (tablet) */
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .container {
+      padding: 30px;
+    }
+  
+    .title {
+      font-size: 40px;
+      top: 15%;
+    }
+  
+    .info {
+      font-size: 25px;
+    }
+  
+    .cart {
+      width: 150px;
+      height: 130px;
+    }
+  
+    .track-btn {
+      font-size: 18px;
+      padding: 0.9em 1.9em;
+    }
+  
+    .retry-btn {
+      font-size: 18px;
+      padding: 0.9em 1.9em;
+    }
+  }
+  
+  /* Small screens (mobile) */
+  @media (max-width: 767px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .title {
+      font-size: 20px;
+      top: 10%;
+    }
+  
+    .info {
+      font-size: 13px;
+      top: 20%;
+    }
+  
+    .animation-container {
+      top: 30%;
+    }
+  
+    .cart {
+      width: 150px;
+      height: 180px;
+    }
+  
+    .track-btn {
+      font-size: 16px;
+      padding: 0.7em 1.5em;
+      bottom: 400px; /* Move button up a bit */
+    }
+  
+    .retry-btn {
+      font-size: 16px;
+      padding: 0.7em 1.5em;
+      bottom: -100px; /* Move button up a bit */
+    }
+  }
+  
+  /* Center the overlay and make it full screen */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers the modal vertically */
+    z-index: 1000; /* Make sure it appears above other elements */
+  }
+  
+  /* Center the modal itself */
+  .modal {
+    background-color: white;
+    padding: 20px;
+    width: 300px; /* Adjust width as needed */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 80%; /* Ensure it fits on smaller screens */
+  }

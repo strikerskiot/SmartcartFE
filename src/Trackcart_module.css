@@ -1,0 +1,127 @@
+/* General Styling (Global) */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background: url('./bg9.jpeg') no-repeat center center/cover;
+  overflow-x: hidden;
+}
+/* TrackCart Specific Container */
+.track-cart-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align content to the bottom */
+  align-items: center;
+  position: relative;
+  background-image: url('./bg9.jpeg'); /* Background image */
+  background-size: cover; /* Ensure full-screen background */
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Road Background */
+.track-cart-container .road-background {
+  width: 100%;
+  height: 70%;
+  position: relative;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Cart Image Styling */
+.track-cart-container .cart-image {
+  position: absolute;
+  bottom: 30px; /* Position the cart towards the bottom of the screen */
+  left: 0; /* Start from the left */
+  height: 140px; /* Increased cart size */
+  width: auto; /* Maintain aspect ratio */
+  transform: translateX(0); /* Ensure the cart starts at the left */
+  transition: left 30s linear; /* Smooth transition for movement */
+}
+
+/* Cart Info Styling */
+.cart-info {
+  position: fixed;
+  bottom: 300px; /* Position above the cart */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-info button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-info button:hover {
+  background: #0056b3;
+}
+
+/* Popup Styling */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8); /* Dark background for the popup */
+  padding: 40px;
+  border-radius: 12px;
+  color: #f1f1f1;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1s ease-out;
+}
+
+.popup h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #4caf50;
+}
+
+.popup p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.popup-cart-image {
+  margin-bottom: 20px;
+}
+
+.popup button {
+  padding: 12px 30px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.popup button:hover {
+  background: #218838;
+}
+
+/* Popup Fade In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
