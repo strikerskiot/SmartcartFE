@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/SmartcartFE/static/css/main.a97f8fe0.css",
-    "main.js": "/SmartcartFE/static/js/main.be925694.js",
+    "main.js": "/SmartcartFE/static/js/main.9d3842e4.js",
     "static/js/453.68693753.chunk.js": "/SmartcartFE/static/js/453.68693753.chunk.js",
     "static/media/bg9.jpeg": "/SmartcartFE/static/media/bg9.0ca8b7f24a3f55cc2732.jpeg",
     "static/media/cart_1.img-removebg-preview.png": "/SmartcartFE/static/media/cart_1.img-removebg-preview.96811ea742aae7a02121.png",
     "static/media/eye.png": "/SmartcartFE/static/media/eye.60a89e808763d442b22c.png",
     "index.html": "/SmartcartFE/index.html",
     "main.a97f8fe0.css.map": "/SmartcartFE/static/css/main.a97f8fe0.css.map",
-    "main.be925694.js.map": "/SmartcartFE/static/js/main.be925694.js.map",
+    "main.9d3842e4.js.map": "/SmartcartFE/static/js/main.9d3842e4.js.map",
     "453.68693753.chunk.js.map": "/SmartcartFE/static/js/453.68693753.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a97f8fe0.css",
-    "static/js/main.be925694.js"
+    "static/js/main.9d3842e4.js"
   ]
 }
